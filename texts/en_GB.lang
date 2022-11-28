@@ -1,0 +1,4 @@
+options.vsync=Vertical Sync (Vsync)
+options.vsync.off=No Vsync
+options.vsync.on=Vsync on
+options.vsync.adaptive=Adaptive Vsync
