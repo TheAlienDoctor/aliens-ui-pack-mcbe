@@ -428,11 +428,9 @@
         "renderer": "mob_effects_renderer",
         "layer": 1
     },
-    "vignette_renderer": {
-        "type": "custom",
-        "renderer": "vignette_renderer",
-        "layer": 0 //Hide the vignette (untested) - Alien
-    },
+	"vignette_renderer": {
+		"renderer": "flying_item_renderer" //Remove Vignette. CREDIT: BedrockTweaks.net - Alien
+	},
     "cursor_renderer": {
         "type": "custom",
         "size": [
