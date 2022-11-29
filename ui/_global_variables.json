@@ -251,13 +251,13 @@
   "$transparent_dark_gradient_end_color": [ 0.1, 0.1, 0.1, 0.0 ],
 
   //////// Transition times ////////
-  "$transition_time_push_size": 0.2,
-  "$transition_time_pop_size": 0.2,
-  "$transition_time_push": 0.2,
-  "$transition_time_pop": 0.2,
-  "$container_transition_time_push": 0.2,
-  "$container_transition_time_pop": 0.2,
-  "$loading_bar_transition": 0.2,
+  "$transition_time_push_size": 0.2, //Shorter screen animation times - Alien
+  "$transition_time_pop_size": 0.2, //Shorter screen animation times - Alien
+  "$transition_time_push": 0.2, //Shorter screen animation times - Alien
+  "$transition_time_pop": 0.2, //Shorter screen animation times - Alien
+  "$container_transition_time_push": 0.2, //Shorter screen animation times - Alien
+  "$container_transition_time_pop": 0.2, //Shorter screen animation times - Alien
+  "$loading_bar_transition": 0.2, //Shorter screen animation times - Alien
 
   //////// Scoreboard colors ////////
   "$player_name_color": [ 1.0, 1.0, 1.0, 1.0 ],
