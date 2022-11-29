@@ -1,10 +1,10 @@
-# Vsync options (Default texts were long and overcomplicated :P )
+## Vsync options (Default texts were long and overcomplicated :P )
 options.vsync=Vertical Sync (Vsync)
 options.vsync.off=No Vsync
 options.vsync.on=Vsync on
 options.vsync.adaptive=Adaptive Vsync
 
-# Promo loading messages
+## Promo loading messages
 alien.message_1=Subscribe to Alien on YouTube: youtube.com/@TheAlienDoctor
 alien.message_2=Check out www.TheAlienDoctor.com for more addons!
 alien.message_3=Follow Alien on Twitter - @TheAlienDoctor
@@ -12,7 +12,7 @@ alien.message_4=Want to help support what Alien makes? Sign up to his Patreon he
 alien.message_5=Like this pack? Consider donating here: streamelements.com/thealiendoctor/tip
 alien.message_6=Join Alien's Discord here: TheAlienDoctor.com/r/Discord
 
-# Other messages
+## Other messages
 alien.message_7=PinaCraft is the best Bedrock SMP
 alien.message_8=Toad Is Bald
 alien.message_9=placeholder
