@@ -894,7 +894,7 @@
             "100%c + 2px"
         ],
         "texture": "textures/ui/Black",
-        "alpha": 0.7,
+        "alpha": 0.0, //Removes co-ords background - Alien
         "controls": [
             {
                 "player_position_text": {
@@ -942,8 +942,8 @@
         "anim_type": "alpha",
         "easing": "in_quart",
         "destroy_at_end": "chat_grid_item",
-        "duration": 1,
-        "from": 0.7,
+        "duration": 0.1, //Quick chat. This is the animation for fading out msgs - Alien
+        "from": 0.1,
         "to": 0
     },
     "anim_chat_bg_wait": {
@@ -992,7 +992,7 @@
                 "chat_background": {
                     "type": "image",
                     "texture": "textures/ui/Black",
-                    "alpha": 0.7,
+                    "alpha": 0.0,
                     "size": [
                         "100%",
                         "100%c"
