@@ -894,7 +894,7 @@
       {
         "player_bg": {
           "type": "image",
-          "texture": "textures/ui/Black",
+          //"texture": "textures/ui/Black", - For removing background of paper doll in inventory - Alien
           "size": [ 52, 70 ],
           "layer": 2,
           "anchor_from": "top_left",
