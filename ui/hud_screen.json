@@ -935,7 +935,7 @@
     },
     "anim_chat_txt_wait": {
         "anim_type": "wait",
-        "duration": "$chat_item_lifetime",
+        "duration": "1", //Quicker chat. Replacing the default variable seems to switch it to a quicker default, although changing the value dones't change anything - Alien
         "next": "@hud.anim_chat_txt_alpha"
     },
     "anim_chat_bg_alpha": {
@@ -948,7 +948,7 @@
     },
     "anim_chat_bg_wait": {
         "anim_type": "wait",
-        "duration": "$chat_item_lifetime",
+        "duration": "1", //Quicker chat. Replacing the default variable seems to switch it to a quicker default, although changing the value dones't change anything - Alien
         "next": "@hud.anim_chat_bg_alpha"
     },
     "chat_label": {
