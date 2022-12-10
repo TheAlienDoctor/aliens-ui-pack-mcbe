@@ -935,20 +935,20 @@
 	},
 	"anim_chat_txt_wait": {
 		"anim_type": "wait",
-		"duration": "1", //Quicker chat. Replacing the default variable seems to switch it to a quicker default, although changing the value doesn't change anything. Default value: $chat_item_lifetime - Alien
+		"duration": "$chat_item_lifetime",
 		"next": "@hud.anim_chat_txt_alpha"
 	},
 	"anim_chat_bg_alpha": {
 		"anim_type": "alpha",
 		"easing": "in_quart",
 		"destroy_at_end": "chat_grid_item",
-		"duration": 0.1, //Quick chat. This is the animation for fading out msgs - Alien
-		"from": 0.1,
+		"duration": 1,
+		"from": 1,
 		"to": 0
 	},
 	"anim_chat_bg_wait": {
 		"anim_type": "wait",
-		"duration": "1", //Quicker chat. Replacing the default variable seems to switch it to a quicker default, although changing the value doesn't change anything. Default value: $chat_item_lifetime - Alien
+		"duration": "$chat_item_lifetime",
 		"next": "@hud.anim_chat_bg_alpha"
 	},
 	"chat_label": {
@@ -996,6 +996,9 @@
 					"size": [
 						"100%",
 						"100%c"
+					],
+					"anims": [
+						"@hud.anim_chat_bg_wait"
 					],
 					"controls": [
 						{
