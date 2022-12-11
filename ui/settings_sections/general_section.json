@@ -2259,7 +2259,7 @@
 				}
 			},
 			{
-				"vsync_dropdown@settings_common.option_dropdown": {
+				"vsync_dropdown@settings_common.option_dropdown": { //Add dropdown for vsync - Alien
 					"$option_label": "options.vsync",
 					"$dropdown_content": "general_section.vysnc_dropdown_content",
 					"$dropdown_area": "content_area",
