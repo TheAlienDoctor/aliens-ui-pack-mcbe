@@ -943,7 +943,7 @@
 		"easing": "in_quart",
 		"destroy_at_end": "chat_grid_item",
 		"duration": 1,
-		"from": 1,
+		"from": 0.0, //Removes background from chat fade out animation - Alien
 		"to": 0
 	},
 	"anim_chat_bg_wait": {
