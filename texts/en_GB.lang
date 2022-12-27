@@ -3,3 +3,29 @@ options.vsync=Vertical Sync (Vsync)
 options.vsync.off=No Vsync
 options.vsync.on=Vsync on
 options.vsync.adaptive=Adaptive Vsync
+
+## Custom loading messages
+tips.game.1=Subscribe to Alien on YouTube: youtube.com/@TheAlienDoctor
+tips.game.2=Check out www.TheAlienDoctor.com for more addons!
+tips.game.3=Follow Alien on Twitter - @TheAlienDoctor
+tips.game.4=Want to help support what Alien makes? Sign up to his Patreon here: patreon.com/TheAlienDoctor
+tips.game.5=Like this pack? Consider donating here: streamelements.com/thealiendoctor/tip
+tips.game.6=Join Alien's Discord here: TheAlienDoctor.com/r/Discord
+tips.game.7=PinaCraft is the best Bedrock SMP
+tips.game.8=Toad Is Bald
+tips.game.9=Check out KingdomsCrusade.net as well!
+tips.game.10=Join The Alien Empire today!
+
+##Sneaky self promo
+menu.copyright=©Mojang AB | UI Resource pack created by TheAlienDoctor
+
+##Shorter texts
+action.hint.exit.boat=Jump to exit the boat
+action.hint.exit.minecart=Jump to exit the minecart
+action.hint.exit.pig=Sneak to dismount
+action.hint.exit.horse=Sneak to dismount
+action.hint.exit.strider=Sneak to dismount
+action.hint.exit.donkey=Sneak to dismount
+action.hint.exit.mule=Sneak to dismount
+action.hint.exit.llama=Sneak to dismount
+action.hint.exit.skeleton_horse=Sneak to dismount
