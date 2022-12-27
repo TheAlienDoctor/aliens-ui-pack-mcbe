@@ -4,6 +4,9 @@ options.vsync.off=No Vsync
 options.vsync.on=Vsync on
 options.vsync.adaptive=Adaptive Vsync
 
+##Togle co-ords
+options.hidepaperdoll=Hide Co-ordinates (client side)
+
 ## Custom loading messages
 tips.game.1=Subscribe to Alien on YouTube: youtube.com/@TheAlienDoctor
 tips.game.2=Check out www.TheAlienDoctor.com for more addons!

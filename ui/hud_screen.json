@@ -6,8 +6,8 @@
 	"hud_player_renderer": {
 		"type": "panel",
 		"size": [
-			15,
-			15
+			0, //Setting the size to 0 will mean the paper doll doesn't exist - Alien
+			0
 		],
 		"controls": [
 			{
@@ -894,7 +894,7 @@
 			"100%c + 2px"
 		],
 		"texture": "textures/ui/Black",
-		"alpha": 0.0, //Removes co-ords background - Alien
+		"alpha": 0.0, //Remove background from position
 		"controls": [
 			{
 				"player_position_text": {
@@ -919,7 +919,7 @@
 		],
 		"bindings": [
 			{
-				"binding_name": "#player_position_visible",
+				"binding_name": "#paper_doll_visible",
 				"binding_name_override": "#visible",
 				"binding_condition": "always",
 				"binding_type": "global"
@@ -3297,8 +3297,8 @@
 							"paper_doll_padding": {
 								"type": "panel",
 								"size": [
-									"100%",
-									50
+									"0%", //Hide padding for paper doll so the chat appears on the top - Alien
+									0
 								],
 								"bindings": [
 									{
