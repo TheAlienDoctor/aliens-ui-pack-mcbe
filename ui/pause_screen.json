@@ -18,6 +18,15 @@
 			16
 		]
 	},
+	"alien_face": {
+		"type": "image",
+		"texture": "textures/ui/AlienFace",
+		"layer": 3,
+		"size": [
+			16,
+			16
+		]
+	},
 	"change_skin_icon": {
 		"type": "image",
 		"anchor_from": "left_middle",
@@ -440,6 +449,28 @@
 			}
 		]
 	},
+	"alien_face_icon_button": {
+		"type": "panel",
+		"$button_tts_header": "accessibility.alien.alien_button",
+		"$pressed_button_name": "button.alien_face",
+		"controls": [
+			{
+				"alien_face_button@pause.alien_face_button": {
+					"$focus_override_left": "FOCUS_OVERRIDE_STOP"
+				}
+			}
+		]
+	},
+	"alien_face_button@common_buttons.hyperlink_content_button": {
+		"size": [
+			24,
+			24
+		],
+		"property_bag": {
+			"#hyperlink": "https://thealiendoctor.com" //Unfortunatly this property only allows for specific set of allowed URLs, not my website making this button useless. - Alien
+		},
+		"$button_content": "pause.alien_face"
+	},
 	"feedback_button@common_buttons.hyperlink_content_button": {
 		"size": [
 			24,
@@ -733,6 +764,28 @@
 								"type": "panel",
 								"size": [
 									"12%",
+									0
+								]
+							}
+						},
+						{
+							"alien_face_btn@pause.column_frame": {
+								"size": [
+									28,
+									32
+								],
+								"controls": [
+									{
+										"alien@alien_face_icon_button": {}
+									}
+								]
+							}
+						},
+						{
+							"alien_padding": {
+								"type": "panel",
+								"size": [
+									"2%",
 									0
 								]
 							}
