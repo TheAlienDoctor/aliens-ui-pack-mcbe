@@ -1,0 +1,3 @@
+No how to play button was inspired by Bedrock Tweaks, although we use different methods to accomplish the same thing.
+The vignette hider is from Bedrock Tweaks.
+Bedrock Tweaks: https://bedrocktweaks.net/
