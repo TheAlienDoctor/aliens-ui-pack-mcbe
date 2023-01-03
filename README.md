@@ -1,4 +1,4 @@
-# Pack name
+# Alien's UI Pack
 ## Information
 This pack tweaks the Bedrock Edition UI in mostly minor ways to how Alien likes it.
 ## Feature list
