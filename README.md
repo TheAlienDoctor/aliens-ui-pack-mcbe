@@ -17,6 +17,7 @@ This pack does many many cool things
 - No nether particles
 - Smaller rain
 - Removed background of item name (the one that appears when you select it on your hotbar)
+- Added some fun splash screen and loading messages related to me :D
 - Honestly there might be something I missed, I didn't keep a list of features when I made this :facepalm:
 ## Download
 You can download this pack from my website: https://TheAlienDoctor.com <br>
