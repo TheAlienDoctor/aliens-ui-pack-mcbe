@@ -16,6 +16,7 @@ This pack does many many cool things
 - Removed background of sidebar scoreboards
 - No nether particles
 - Smaller rain
+- Reduced rain splash around player
 - Removed background of item name (the one that appears when you select it on your hotbar)
 - No potion/beacon particles
 - Added some fun splash screen and loading messages related to me :D
