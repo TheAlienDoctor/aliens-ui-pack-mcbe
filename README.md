@@ -10,13 +10,14 @@ This pack does many many cool things
 - Added a pointless Alien button on pause screen and play screen
 - Removed vignette (Credit: BedrockTweaks.net)
 - Removed background from chat and position (Same as my clearchat pack)
-- Removed the background of the paper doll in inventoyr, as sometimes it would mess up skins (including the shoes of mine)
+- Removed the background of the paper doll in inventory, as sometimes it would mess up skins (including the shoes of mine)
 - Added toggleable co-ordinates (Same as my standalone toggle co-ords pack). This means paper doll will not work with this pack. You can toggle co-ords using f8
 - Removed how to play button from inventory (Inspired from BedrockTweaks.net, but uses different methods)
 - Removed background of sidebar scoreboards
 - No nether particles
 - Smaller rain
 - Removed background of item name (the one that appears when you select it on your hotbar)
+- No potion/beacon particles
 - Added some fun splash screen and loading messages related to me :D
 - Honestly there might be something I missed, I didn't keep a list of features when I made this :facepalm:
 ## Download
