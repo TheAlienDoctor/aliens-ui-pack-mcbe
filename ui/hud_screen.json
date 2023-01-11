@@ -492,5 +492,131 @@
 				"binding_type": "global"
 			}
 		]
+	},
+	"item_name_text_root": {
+		"type": "panel",
+		"size": [
+			"100%cm",
+			"100%cm"
+		],
+		"$show_interact_padding|default": false,
+		"$show_survival_padding|default": false,
+		"$show_text_background|default": false,
+		"$text_color|default": "$tool_tip_text",
+		"$text_binding|default": "#item_text",
+		"anchor_from": "bottom_middle",
+		"anchor_to": "bottom_middle",
+		"$wait_duration|default": 1,
+		"$destroy_id|default": "item_name_text",
+		"controls": [
+			{
+				"item_text_aligner": {
+					"type": "stack_panel",
+					"size": [
+						"100%cm",
+						"100%c"
+					],
+					"controls": [
+						{
+							"item_text_control": {
+								"type": "panel",
+								"size": [
+									"100%cm",
+									"100%cm"
+								],
+								"controls": [
+									//{
+									//	"item_text_background": {
+									//		"ignored": "(not $show_text_background)",
+									//		"type": "image",
+									//		"size": [
+									//			"100%sm + 12px",
+									//			"100%sm + 5px"
+									//		],
+									//		"texture": "textures/ui/hud_tip_text_background",
+									//		"alpha": "@hud.anim_item_name_background_alpha_in"
+									//	}
+									//},
+									//Hide Background of item name - Alien
+									{
+										"item_text_label": {
+											"type": "label",
+											"max_size": [
+												200,
+												"default"
+											],
+											"text_alignment": "center",
+											"layer": 31,
+											"color": "$text_color",
+											"text": "#text",
+											"shadow": true, //Add shadow so its still readable - Alien
+											"alpha": "@hud.anim_item_name_text_alpha_in",
+											"bindings": [
+												{
+													"binding_name": "$text_binding",
+													"binding_name_override": "#text"
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"interact_padding@common.empty_panel": {
+								"visible": "$show_interact_padding",
+								// To not overlap with the interact button
+								// the text needs to move up by 18
+								"size": [
+									"100%sm",
+									18
+								],
+								"bindings": [
+									{
+										"binding_name": "#interact_visible",
+										"binding_name_override": "#visible",
+										"binding_condition": "always"
+									}
+								]
+							}
+						},
+						{
+							"survival_buffer@common.empty_panel": {
+								"visible": "$show_survival_padding",
+								// Survival HUD has elements above the hot bar
+								// meaning the text needs to move up
+								"size": [
+									"100%sm",
+									17
+								],
+								"bindings": [
+									{
+										"binding_name": "#show_survival_ui",
+										"binding_name_override": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"armor_buffer@common.empty_panel": {
+								"visible": false,
+								// Armor HUD is visible only if player has armor equipped
+								// The text needs to move up a bit further if armor is equipped
+								"size": [
+									"100%sm",
+									8
+								],
+								"bindings": [
+									{
+										"binding_name": "#is_in_classic_ui_mode_with_visible_armor",
+										"binding_name_override": "#visible"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
 	}
 }
