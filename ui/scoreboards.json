@@ -30,6 +30,7 @@
 								"anchor_from": "top_middle",
 								"anchor_to": "top_middle",
 								"text_alignment": "center",
+								"shadow": true, //Add shadow so its still readable - Alien
 								"inherit_max_sibling_width": true,
 								"locked_alpha": 1.0,
 								"layer": 1,
