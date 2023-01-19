@@ -1,7 +1,3 @@
-/********************************************************
-+*   (c) Mojang. All rights reserved                       *
-+*   (c) Microsoft. All rights reserved.                   *
-+*********************************************************/
 {
 	"namespace": "trade2",
 	"top_half_stack_panel": {
