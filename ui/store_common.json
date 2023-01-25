@@ -1,0 +1,39 @@
+{
+	"namespace": "common_store",
+	//--------------------------------------------------------------------------------
+	// Controls
+	//--------------------------------------------------------------------------------
+	"tag": {
+		"type": "image",
+		"$tag_texture|default": "textures/ui/newOffersIcon",
+		"$tag_text|default": "",
+		"texture": "$tag_texture",
+		"size": [
+			"0",
+			0 //Remove "NewOffersIcon" notification from store button - Alien
+		],
+		"controls": [
+			{
+				"new_offer_label": {
+					"type": "label",
+					"size": [
+						"default",
+						10
+					],
+					"offset": [
+						0,
+						1
+					],
+					"text": "$tag_text",
+					"color": "$new_offer_icon_text_color",
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"layer": 1,
+					"tts_name": "accessibility.store.tag",
+					"tts_control_type_order_priority": 1002, // To be read after the button control type
+					"tts_value_order_priority": 1001
+				}
+			}
+		]
+	}
+}
