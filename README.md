@@ -14,12 +14,12 @@ This pack tweaks the Bedrock Edition UI in mostly minor ways to how Alien likes 
 - Added toggleable co-ordinates (Same as my standalone toggle co-ords pack). This means paper doll will not work with this pack. You can toggle co-ords using f8
 - Removed how to play button from inventory (Inspired from BedrockTweaks.net, but uses different methods)
 - Removed background of sidebar scoreboards
-- No nether particles
+- No nether biome particles
 - Smaller rain
 - Reduced rain splash around player
 - Removed background of item name (the one that appears when you select it on your hotbar)
-- No potion/beacon particles
 - Added some fun splash screen and loading messages related to me :D
+- Removed the "New offers" icon that appears on the notification button on the start screen
 - Honestly there might be something I missed, I didn't keep a list of features when I made this :facepalm:
 ## Download
 You can download this pack from my website: https://TheAlienDoctor.com <br>
