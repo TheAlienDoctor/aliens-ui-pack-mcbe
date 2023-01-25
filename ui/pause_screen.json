@@ -36,13 +36,13 @@
 		"size": [
 			"0", //Makes marketplace button invisible - Alien
 			0
-		],
-		"controls": [
+		]
+	},
+	"menu_background/button_panel": {
+		"modifications": [
 			{
-				"store_button@pause.store_button": {}
-			},
-			{
-				"store_error_button@pause.store_error_button": {}
+				"control_name": "store_button_panel", //This will make sure the marketplace is definetly removed, and also removes some weird lines that were appearing. - Alien
+				"operation": "remove"
 			}
 		]
 	},
