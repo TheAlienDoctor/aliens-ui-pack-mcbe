@@ -1,5 +1,45 @@
 {
 	"namespace": "scoreboard",
+	"scoreboard_sidebar_score": {
+		"type": "label",
+		"layer": 2,
+		"size": [
+			"default",
+			10
+		],
+		"text": "#player_score_sidebar",
+		"shadow": true, //Add shadow so its still readable - Alien
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"locked_alpha": 1.0,
+		"color": "$player_score_color",
+		"bindings": [
+			{
+				"binding_name": "#player_score_sidebar",
+				"binding_type": "collection",
+				"binding_collection_name": "scoreboard_scores"
+			}
+		]
+	},
+	"scoreboard_sidebar_player": {
+		"type": "label",
+		"layer": 2,
+		"text": "#player_name_sidebar",
+		"shadow": true, //Add shadow so its still readable - Alien
+		"size": [
+			"default",
+			10
+		],
+		"locked_alpha": 1.0,
+		"color": "$player_name_color",
+		"bindings": [
+			{
+				"binding_name": "#player_name_sidebar",
+				"binding_type": "collection",
+				"binding_collection_name": "scoreboard_players"
+			}
+		]
+	},
 	"scoreboard_sidebar": {
 		"type": "panel",
 		"size": [
@@ -27,10 +67,10 @@
 									10
 								],
 								"text": "#objective_sidebar_name",
+								"shadow": true, //Add shadow so its still readable - Alien
 								"anchor_from": "top_middle",
 								"anchor_to": "top_middle",
 								"text_alignment": "center",
-								"shadow": true, //Add shadow so its still readable - Alien
 								"inherit_max_sibling_width": true,
 								"locked_alpha": 1.0,
 								"layer": 1,
