@@ -144,7 +144,7 @@
 				"right_helpers@hud.right_helpers": {}
 			},
 			{
-				"emote_helpers@hud.emote_helpers": {}
+				"emote_expediate_helpers@hud.emote_expediate_helpers": {}
 			},
 			{
 				"centered_gui_elements@centered_gui_elements": {}
