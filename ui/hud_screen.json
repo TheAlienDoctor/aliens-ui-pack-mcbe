@@ -35,6 +35,7 @@
 	"vignette_renderer": {
 		"renderer": "flying_item_renderer" //Remove Vignette. CREDIT: BedrockTweaks.net - Alien
 	},
+	// Displays player's position in the form "Position: 0, 0, 0", as well as "Agent Pos: 0, 0, 0" if an owned agent is present
 	"player_position": {
 		"type": "image",
 		"size": [
@@ -67,10 +68,8 @@
 		],
 		"bindings": [
 			{
-				"binding_name": "#paper_doll_visible",
-				"binding_name_override": "#visible",
-				"binding_condition": "always",
-				"binding_type": "global"
+				"binding_name": "#paper_doll_visible", //Setting position binding to the paper doll binding, meaning it will only be shown when the paper doll is enabled. - Alien
+				"binding_name_override": "#visible"
 			}
 		]
 	},
@@ -91,6 +90,12 @@
 		],
 		"anchor_from": "top_left",
 		"anchor_to": "top_left",
+		"bindings": [
+			{
+				"binding_name": "(not #on_new_death_screen)",
+				"binding_name_override": "#visible"
+			}
+		],
 		"controls": [
 			{
 				"chat_background": {
@@ -112,6 +117,132 @@
 								"offset": [
 									2,
 									0
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"item_name_text_root": {
+		"type": "panel",
+		"size": [
+			"100%cm",
+			"100%cm"
+		],
+		"$show_interact_padding|default": false,
+		"$show_survival_padding|default": false,
+		"$show_text_background|default": false,
+		"$text_color|default": "$tool_tip_text",
+		"$text_binding|default": "#item_text",
+		"anchor_from": "bottom_middle",
+		"anchor_to": "bottom_middle",
+		"$wait_duration|default": 1,
+		"$destroy_id|default": "item_name_text",
+		"controls": [
+			{
+				"item_text_aligner": {
+					"type": "stack_panel",
+					"size": [
+						"100%cm",
+						"100%c"
+					],
+					"controls": [
+						{
+							"item_text_control": {
+								"type": "panel",
+								"size": [
+									"100%cm",
+									"100%cm"
+								],
+								"controls": [
+									//{
+									//	"item_text_background": {
+									//		"ignored": "(not $show_text_background)",
+									//		"type": "image",
+									//		"size": [
+									//			"100%sm + 12px",
+									//			"100%sm + 5px"
+									//		],
+									//		"texture": "textures/ui/hud_tip_text_background",
+									//		"alpha": "@hud.anim_item_name_background_alpha_in"
+									//	}
+									//},
+									//Hide Background of item name - Alien
+									{
+										"item_text_label": {
+											"type": "label",
+											"max_size": [
+												200,
+												"default"
+											],
+											"text_alignment": "center",
+											"layer": 31,
+											"color": "$text_color",
+											"text": "#text",
+											"shadow": true, //Add shadow so its still readable - Alien
+											"alpha": "@hud.anim_item_name_text_alpha_in",
+											"bindings": [
+												{
+													"binding_name": "$text_binding",
+													"binding_name_override": "#text"
+												}
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"interact_padding@common.empty_panel": {
+								"visible": "$show_interact_padding",
+								// To not overlap with the interact button
+								// the text needs to move up by 18
+								"size": [
+									"100%sm",
+									18
+								],
+								"bindings": [
+									{
+										"binding_name": "#interact_visible",
+										"binding_name_override": "#visible",
+										"binding_condition": "always"
+									}
+								]
+							}
+						},
+						{
+							"survival_buffer@common.empty_panel": {
+								"visible": "$show_survival_padding",
+								// Survival HUD has elements above the hot bar
+								// meaning the text needs to move up
+								"size": [
+									"100%sm",
+									17
+								],
+								"bindings": [
+									{
+										"binding_name": "#show_survival_ui",
+										"binding_name_override": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"armor_buffer@common.empty_panel": {
+								"visible": false,
+								// Armor HUD is visible only if player has armor equipped
+								// The text needs to move up a bit further if armor is equipped
+								"size": [
+									"100%sm",
+									8
+								],
+								"bindings": [
+									{
+										"binding_name": "#is_in_classic_ui_mode_with_visible_armor",
+										"binding_name_override": "#visible"
+									}
 								]
 							}
 						}
@@ -262,14 +393,32 @@
 						24
 					],
 					"anchor_from": "center",
-					"anchor_to": "center"
+					"anchor_to": "center",
+					"bindings": [
+						{
+							"binding_name": "(not #on_new_death_screen)",
+							"binding_name_override": "#visible"
+						}
+					]
 				}
 			},
 			{
 				"vignette_rend@vignette_renderer": {}
 			},
 			{
-				"curor_rend@cursor_renderer": {}
+				"editor_gizmo_rend@editor_gizmo_renderer": {
+					"ignored": "(not $is_editor_mode_enabled)"
+				}
+			},
+			{
+				"curor_rend@cursor_renderer": {
+					"bindings": [
+						{
+							"binding_name": "(not #on_new_death_screen)",
+							"binding_name_override": "#visible"
+						}
+					]
+				}
 			},
 			{
 				"game_tip@game_tip.game_tip_panel": {
@@ -286,11 +435,24 @@
 							]
 						}
 					],
-					"offset": "$offset"
+					"offset": "$offset",
+					"bindings": [
+						{
+							"binding_name": "(not #on_new_death_screen)",
+							"binding_name_override": "#visible"
+						}
+					]
 				}
 			},
 			{
-				"sidebar@scoreboard.scoreboard_sidebar": {}
+				"sidebar@scoreboard.scoreboard_sidebar": {
+					"bindings": [
+						{
+							"binding_name": "#scoreboard_sidebar_visible",
+							"binding_name_override": "#visible"
+						}
+					]
+				}
 			},
 			{
 				"progress_rend@progress_indicator_renderer": {
@@ -426,6 +588,23 @@
 							}
 						},
 						{
+							"boss_hud_touch_padding": {
+								"type": "panel",
+								"size": [
+									"100%",
+									"15%"
+								],
+								"visible": "#boss_hud_touch_padding", //Make this visible to move the boss hud panel down
+								"bindings": [
+									{
+										"binding_name": "#boss_hud_touch_padding",
+										"binding_name_override": "#visible",
+										"binding_condition": "always"
+									}
+								]
+							}
+						},
+						{
 							"boss_hud_panel": {
 								"type": "panel",
 								"controls": [
@@ -445,34 +624,6 @@
 			},
 			{
 				"save_icon@hud.auto_save": {}
-			},
-			{
-				"welcome_to_control_panel_trick": {
-					"type": "panel",
-					"size": [
-						100,
-						100
-					],
-					"offset": [
-						0,
-						-20
-					],
-					"controls": [
-						{
-							"lets_go_button@hud.Control_customization_trick_panel": {}
-						},
-						{
-							"welcome_to_control_background_panel@hud.welcome_to_control_background_panel": {}
-						}
-					],
-					"bindings": [
-						{
-							"binding_name": "#control_customization_visible",
-							"binding_name_override": "#visible",
-							"binding_type": "global"
-						}
-					]
-				}
 			}
 		],
 		"bindings": [
@@ -490,132 +641,6 @@
 				"binding_name": "#hud_propagate_alpha",
 				"binding_name_override": "#propagateAlpha",
 				"binding_type": "global"
-			}
-		]
-	},
-	"item_name_text_root": {
-		"type": "panel",
-		"size": [
-			"100%cm",
-			"100%cm"
-		],
-		"$show_interact_padding|default": false,
-		"$show_survival_padding|default": false,
-		"$show_text_background|default": false,
-		"$text_color|default": "$tool_tip_text",
-		"$text_binding|default": "#item_text",
-		"anchor_from": "bottom_middle",
-		"anchor_to": "bottom_middle",
-		"$wait_duration|default": 1,
-		"$destroy_id|default": "item_name_text",
-		"controls": [
-			{
-				"item_text_aligner": {
-					"type": "stack_panel",
-					"size": [
-						"100%cm",
-						"100%c"
-					],
-					"controls": [
-						{
-							"item_text_control": {
-								"type": "panel",
-								"size": [
-									"100%cm",
-									"100%cm"
-								],
-								"controls": [
-									//{
-									//	"item_text_background": {
-									//		"ignored": "(not $show_text_background)",
-									//		"type": "image",
-									//		"size": [
-									//			"100%sm + 12px",
-									//			"100%sm + 5px"
-									//		],
-									//		"texture": "textures/ui/hud_tip_text_background",
-									//		"alpha": "@hud.anim_item_name_background_alpha_in"
-									//	}
-									//},
-									//Hide Background of item name - Alien
-									{
-										"item_text_label": {
-											"type": "label",
-											"max_size": [
-												200,
-												"default"
-											],
-											"text_alignment": "center",
-											"layer": 31,
-											"color": "$text_color",
-											"text": "#text",
-											"shadow": true, //Add shadow so its still readable - Alien
-											"alpha": "@hud.anim_item_name_text_alpha_in",
-											"bindings": [
-												{
-													"binding_name": "$text_binding",
-													"binding_name_override": "#text"
-												}
-											]
-										}
-									}
-								]
-							}
-						},
-						{
-							"interact_padding@common.empty_panel": {
-								"visible": "$show_interact_padding",
-								// To not overlap with the interact button
-								// the text needs to move up by 18
-								"size": [
-									"100%sm",
-									18
-								],
-								"bindings": [
-									{
-										"binding_name": "#interact_visible",
-										"binding_name_override": "#visible",
-										"binding_condition": "always"
-									}
-								]
-							}
-						},
-						{
-							"survival_buffer@common.empty_panel": {
-								"visible": "$show_survival_padding",
-								// Survival HUD has elements above the hot bar
-								// meaning the text needs to move up
-								"size": [
-									"100%sm",
-									17
-								],
-								"bindings": [
-									{
-										"binding_name": "#show_survival_ui",
-										"binding_name_override": "#visible"
-									}
-								]
-							}
-						},
-						{
-							"armor_buffer@common.empty_panel": {
-								"visible": false,
-								// Armor HUD is visible only if player has armor equipped
-								// The text needs to move up a bit further if armor is equipped
-								"size": [
-									"100%sm",
-									8
-								],
-								"bindings": [
-									{
-										"binding_name": "#is_in_classic_ui_mode_with_visible_armor",
-										"binding_name_override": "#visible"
-									}
-								]
-							}
-						}
-					]
-				}
 			}
 		]
 	}
