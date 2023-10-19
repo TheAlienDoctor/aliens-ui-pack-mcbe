@@ -1,9 +1,3 @@
-## Vsync options (Default texts were long and overcomplicated :P )
-options.vsync=Vertical Sync (Vsync)
-options.vsync.off=No Vsync
-options.vsync.on=Vsync on
-options.vsync.adaptive=Adaptive Vsync
-
 ##Togle co-ords
 options.hidepaperdoll=Hide Co-ordinates (client side)
 
@@ -18,6 +12,7 @@ tips.game.7=PinaCraft is the best Bedrock SMP
 tips.game.8=Toad Is Bald
 tips.game.9=Check out KingdomsCrusade.net as well!
 tips.game.10=Join The Alien Empire today!
+tips.game.11=Become a channel member on YouTube for great perks, and to greatly help Alien out! youtube.com/@TheAlienDoctor/join
 
 ##Sneaky self promo
 menu.copyright=©Mojang AB | UI Resource pack © TheAlienDoctor
