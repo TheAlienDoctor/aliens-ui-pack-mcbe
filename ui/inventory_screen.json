@@ -325,9 +325,6 @@
 													"recipe_book_layout_toggle@crafting.recipe_book_layout_toggle": {
 														"$focus_override_left": "search_tab"
 													}
-												},
-												{
-													"open_recipe_book_tip@game_tip.open_recipe_book_factory": {}
 												}
 											]
 										}
@@ -423,9 +420,6 @@
 														"anchor_from": "center",
 														"anchor_to": "center"
 													}
-												},
-												{
-													"close_inventory_tip@game_tip.close_inventory_factory": {}
 												}
 											]
 										}
