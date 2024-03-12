@@ -57,7 +57,6 @@
 					"controls": [
 						{
 							"alien_face_btn@start.column_frame": {
-								"ignored": "$feedback_ignored",
 								"size": [
 									28,
 									32
@@ -182,6 +181,46 @@
 								"controls": [
 									{
 										"invite_button@start.realms_pending_invite_panel": {}
+									}
+								],
+								"bindings": [
+									{
+										"binding_name": "#realms_notification_visible",
+										"binding_name_override": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"inbox_padding": {
+								"type": "panel",
+								"size": [
+									3,
+									"100%"
+								],
+								"bindings": [
+									{
+										"binding_name": "#inbox_enabled",
+										"binding_name_override": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"inbox_btn@start.column_frame": {
+								"size": [
+									28,
+									32
+								],
+								"controls": [
+									{
+										"inbox_icon_button@start.inbox_icon_button": {}
+									}
+								],
+								"bindings": [
+									{
+										"binding_name": "#inbox_enabled",
+										"binding_name_override": "#visible"
 									}
 								]
 							}
