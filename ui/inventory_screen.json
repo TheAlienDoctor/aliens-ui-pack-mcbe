@@ -383,17 +383,17 @@
 										}
 									},
 									//{
-									//	"help_button_panel": { /
-									//		"type": "panel",
-									//		"size": [
-									//			"100%c",
-									//			"100%"
-									//		],
-									//		"controls": [
-									//			{
-									//				"help_button@crafting.help_button": {}
-									//			}
-									//		]
+									//	"help_button_panel": {
+									//	  "type": "panel",
+									//	  "size": [
+									//		"100%c",
+									//		"100%"
+									//	  ],
+									//	  "controls": [
+									//		{
+									//		  "help_button@crafting.help_button": {}
+									//		}
+									//	  ]
 									//	}
 									//},
 									//Hide how to play button - Alien
