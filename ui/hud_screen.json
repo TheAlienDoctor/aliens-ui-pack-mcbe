@@ -32,11 +32,6 @@
       }
     ]
   },
-  "vignette_renderer": {
-    "type": "custom",
-    "renderer": "flying_item_renderer", //Remove Vignette. CREDIT: BedrockTweaks.net - Alien
-    "layer": 0
-  },
   // Displays player's position in the form "Position: 0, 0, 0", as well as "Agent Pos: 0, 0, 0" if an owned agent is present
   "player_position": {
     "type": "image",
@@ -129,6 +124,21 @@
       }
     ]
   },
+  "anim_item_name_text_alpha_stay": {
+    "anim_type": "wait",
+    "duration": 1.5, //Time for item name to wait on screen - Alien
+    "next": "@hud.anim_item_name_text_alpha_out"
+  },
+  "anim_item_name_text_alpha_out": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "destroy_at_end": "$destroy_id",
+    "duration": 1, //Time for fade out animation - Alien
+    "from": 1.0,
+    "to": 0
+  },
+  //Did not need to edit background animation due to background being removed.
+  //Did not edit in animation because it made the fade in weird when switching between items
   "item_name_text_root": {
     "type": "panel",
     "size": [
@@ -518,26 +528,6 @@
         }
       },
       {
-        "hotbar_game_tip@game_tip.hotbar_game_tip_factory": {
-          "anchor_from": "bottom_middle",
-          "anchor_to": "bottom_middle",
-          "$tip_size|default": [
-            0,
-            50
-          ],
-          "variables": [
-            {
-              "requires": "$pocket_screen",
-              "$tip_size": [
-                "100%",
-                50
-              ]
-            }
-          ],
-          "size": "$tip_size"
-        }
-      },
-      {
         "exp_rend_resizable@exp_progress_bar_and_hotbar_pocket": {
           "bindings": [
             {
@@ -590,15 +580,16 @@
           "anchor_to": "center",
           "bindings": [
             {
-              "binding_name": "(not #on_new_death_screen)",
+              "binding_name": "#status_effects_visible",
               "binding_name_override": "#visible"
             }
           ]
         }
       },
-      {
-        "vignette_rend@vignette_renderer": {}
-      },
+      //{
+      //  "vignette_rend@vignette_renderer": {}
+      //},
+      //Remove vignette - Alien
       {
         "curor_rend@cursor_renderer": {
           "bindings": [
@@ -610,28 +601,7 @@
         }
       },
       {
-        "game_tip@game_tip.game_tip_factory": {
-          "$offset": [
-            0,
-            "-90px"
-          ],
-          "variables": [
-            {
-              "requires": "$pocket_screen",
-              "$offset": [
-                0,
-                "-60px"
-              ]
-            }
-          ],
-          "offset": "$offset",
-          "bindings": [
-            {
-              "binding_name": "(not #on_new_death_screen)",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
+        "game_tip@game_tip.game_tip_factory": {}
       },
       {
         "sidebar@scoreboard.scoreboard_sidebar": {
