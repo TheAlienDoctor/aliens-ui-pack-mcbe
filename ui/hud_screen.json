@@ -715,6 +715,7 @@
             {
               "player_position@hud.player_position": {}
             },
+            { "number_of_days_played@hud.number_of_days_played": {} },
             {
               "chat_panel@hud.chat_panel": {}
             }
