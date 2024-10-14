@@ -2,21 +2,20 @@
 ## Information
 This pack tweaks the Bedrock Edition UI in mostly minor ways to how Alien likes it.
 ## Feature list
-- Quicker screen animations</li>
-- Partially removed background from settings</li>
-- Fully removed background from pause screen and inventory screens</li>
-- Removed marketplace button in pause screen</li>
-- Added a pointless Alien button on pause screen and play screen</li>
+- Quicker screen animations
+- Partially removed background from settings
+- Fully removed background from pause screen and inventory screens
+- Removed marketplace button in pause screen
+- Added a pointless Alien button on pause screen and play screen<
 - Removed vignette Bedrock Tweaks
-- Removed background from chat and position (Same as my clearchat pack)<
+- Removed background from chat and position (Same as my clearchat pack)
 - Removed the background of the paper doll in inventory, as sometimes it would mess up skins (including the shoes of mine)
-- Added toggleable co-ordinates (Same as my standalone toggle co-ords pack). This means paper doll will not work with this pack. You can toggle co-ords using f8
+- Added toggleable co-ordinates and day counter (same as my standalone toggle co-ords pack). This means paper doll will not work with this pack. You can toggle co-ords using f8
 - Removed how to play button from inventory (Inspired from Bedrock Tweaks, but uses different methods)
 - Removed background of sidebar scoreboards
 - No nether particles, and smaller rain particles from my better rain pack
 - Removed background of item name (the one that appears when you select it on your hotbar)
-- Removed the "New offers" icon that appears on the notification button on the start screen
-- Added some fun splash screen and loading messages related to me :D<
+- Added some fun splash screen and loading messages related to me :D
 - Honestly there might be something I missed, I didn't keep a list of features when I made this :facepalm:
 ## Download
 You can download this pack from my website: https://TheAlienDoctor.com <br>
