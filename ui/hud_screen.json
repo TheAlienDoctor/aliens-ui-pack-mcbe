@@ -40,7 +40,7 @@
       "100%c + 2px"
     ],
     "texture": "textures/ui/Black",
-    "alpha": 0.0, //Remove background from position - Alien
+    "alpha": 0.0, //Remove background - Alien
     "controls": [
       {
         "player_position_text": {
@@ -55,6 +55,46 @@
           "bindings": [
             {
               "binding_name": "#player_position_text",
+              "binding_name_override": "#text",
+              "binding_condition": "always_when_visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#paper_doll_visible", //Setting position binding to the paper doll binding, meaning it will only be shown when the paper doll is enabled. - Alien
+        "binding_name_override": "#visible",
+        "binding_condition": "always",
+        "binding_type": "global"
+      }
+    ]
+  },
+  // Displays number of played in-game days
+  "number_of_days_played": {
+    "type": "image",
+    "size": [
+      "100%c + 6px",
+      "100%c + 2px"
+    ],
+    "texture": "textures/ui/Black",
+    "alpha": 0.0, //Remove background - Alien
+    "controls": [
+      {
+        "number_of_days_played_text": {
+          "type": "label",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "layer": 1,
+          "enable_profanity_filter": false,
+          "color": "$chat_text_color",
+          "text": "#text",
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_name": "#number_of_days_played_text",
               "binding_name_override": "#text",
               "binding_condition": "always_when_visible",
               "binding_type": "global"
@@ -715,7 +755,9 @@
             {
               "player_position@hud.player_position": {}
             },
-            { "number_of_days_played@hud.number_of_days_played": {} },
+            {
+              "number_of_days_played@hud.number_of_days_played": {}
+            },
             {
               "chat_panel@hud.chat_panel": {}
             }
