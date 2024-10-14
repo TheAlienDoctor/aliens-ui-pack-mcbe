@@ -1,19 +1,20 @@
 ##Togle co-ords
-options.hidepaperdoll=Hide Co-ordinates (client side)
+options.hidepaperdoll=Hide Co-ordinates and Days (client side)
 
 ## Custom loading messages
-tips.game.1=Subscribe to Alien on YouTube: youtube.com/@TheAlienDoctor
-tips.game.2=Check out www.TheAlienDoctor.com for more addons!
-tips.game.3=Follow Alien on Twitter - @TheAlienDoctor
-tips.game.4=Want to help support what Alien makes? Sign up to his Patreon here: patreon.com/TheAlienDoctor
-tips.game.5=Like this pack? Consider donating here: streamelements.com/thealiendoctor/tip
-tips.game.6=Join Alien's Discord here: TheAlienDoctor.com/r/Discord
-tips.game.7=PinaCraft is very cool
-tips.game.8=Toad Is Bald
-tips.game.9=Check out KingdomsCrusade.net as well!
-tips.game.10=Join The Alien Empire today!
-tips.game.11=Become a channel member on YouTube for great perks, and to greatly help Alien out! youtube.com/@TheAlienDoctor/join
-tips.game.12=Project Bedrock is the best SMP
+tips.game.1="Subscribe to Alien on YouTube: youtube.com/@TheAlienDoctor",
+tips.game.2="Check out www.TheAlienDoctor.com for more addons!",
+tips.game.3="Follow Alien on Twitter - @TheAlienDoctor",
+tips.game.4="Want to help support what Alien makes? Sign up to his Patreon here: patreon.com/TheAlienDoctor",
+tips.game.5="Like this pack? Consider donating here: streamelements.com/thealiendoctor/tip",
+tips.game.6="Join Alien's Discord here: TheAlienDoctor.com/r/Discord",
+tips.game.7="o7 PinaCraft",
+tips.game.8="Toad Is Bald",
+tips.game.9="rip Kingdoms Crusade",
+tips.game.10="Join The Alien Empire today!",
+tips.game.11="Become a channel member on YouTube for great perks, and to greatly help Alien out! youtube.com/@TheAlienDoctor/join",
+tips.game.12="Truly Bedrock is the best SMP",
+tips.game.13="Check out the Bedrock Farlands SMP on YouTube and Twitch!"
 
 ##Sneaky self promo
 menu.copyright=©Mojang AB | UI Resource pack © TheAlienDoctor
