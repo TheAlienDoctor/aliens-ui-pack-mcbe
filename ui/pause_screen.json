@@ -1,191 +1,84 @@
 {
-	"namespace": "pause",
-	"alien_face": {
-		"type": "image",
-		"texture": "textures/ui/AlienFace",
-		"layer": 3,
-		"size": [
-			16,
-			16
-		]
-	},
-	"alien_face_icon_button": {
-		"type": "panel",
-		"$button_tts_header": "accessibility.alien.alien_button",
-		"$pressed_button_name": "button.alien_face",
-		"controls": [
-			{
-				"alien_face_button@pause.alien_face_button": {
-					"$focus_override_left": "FOCUS_OVERRIDE_STOP"
-				}
-			}
-		]
-	},
-	"alien_face_button@common_buttons.hyperlink_content_button": {
-		"size": [
-			24,
-			24
-		],
-		"property_bag": {
-			"#hyperlink": "https://thealiendoctor.com" //Unfortunatly this property only allows for specific set of allowed URLs, not my website making this button useless. - Alien
-		},
-		"$button_content": "pause.alien_face"
-	},
-	"store_button_panel": {
-		"type": "panel",
-		"size": [
-			"0", //Makes marketplace button invisible - Alien
-			0
-		]
-	},
-	"menu_background/button_panel": {
-		"modifications": [
-			{
-				"control_name": "store_button_panel", //This will make sure the marketplace is definetly removed, and also removes some weird lines that were appearing. - Alien
-				"operation": "remove"
-			}
-		]
-	},
-	"the_icon_panel": {
-		"type": "stack_panel",
-		"anchor_to": "bottom_left",
-		"anchor_from": "bottom_left",
-		"size": [
-			"50% - 75px",
-			"100%c"
-		],
-		"offset": [
-			0,
-			"-10%"
-		],
-		"controls": [
-			{
-				"stacked_column": {
-					"type": "stack_panel",
-					"size": [
-						"100%",
-						32
-					],
-					"offset": [
-						"5%",
-						0
-					],
-					"anchor_from": "top_left",
-					"anchor_to": "top_left",
-					"orientation": "horizontal",
-					"controls": [
-						{
-							"side_padding": {
-								"type": "panel",
-								"size": [
-									"12%",
-									0
-								]
-							}
-						},
-						{
-							"alien_face_btn@pause.column_frame": {
-								"size": [
-									28,
-									32
-								],
-								"controls": [
-									{
-										"alien@alien_face_icon_button": {}
-									}
-								]
-							}
-						},
-						{
-							"alien_padding": {
-								"type": "panel",
-								"size": [
-									"2%",
-									0
-								]
-							}
-						},
-						{
-							"feedback_btn@pause.column_frame": {
-								"ignored": "$education_edition",
-								"size": [
-									28,
-									32
-								],
-								"controls": [
-									{
-										"feedback_icon_button@pause.feedback_icon_button": {}
-									}
-								]
-							}
-						},
-						{
-							"feedback_padding": {
-								"type": "panel",
-								"size": [
-									"2%",
-									0
-								]
-							}
-						},
-						{
-							"achievements_btn@pause.column_frame": {
-								"ignored": "$achievements_ignored",
-								"size": [
-									28,
-									32
-								],
-								"controls": [
-									{
-										"achievements_icon_button@pause.achievements_icon_button": {}
-									}
-								],
-								"bindings": [
-									{
-										"binding_name": "#achievements_visible",
-										"binding_name_override": "#visible"
-									}
-								]
-							}
-						},
-						{
-							"achievements_padding": {
-								"type": "panel",
-								"size": [
-									"2%",
-									0
-								],
-								"bindings": [
-									{
-										"binding_name": "#achievements_visible",
-										"binding_name_override": "#visible"
-									}
-								]
-							}
-						},
-						{
-							"take_screenshot_btn@pause.column_frame": {
-								"size": [
-									28,
-									32
-								],
-								"controls": [
-									{
-										"take_screenshot_button@pause.take_screenshot_button": {}
-									}
-								],
-								"bindings": [
-									{
-										"binding_name": "#show_clubs",
-										"binding_name_override": "#visible",
-										"binding_type": "global"
-									}
-								]
-							}
-						}
-					]
-				}
-			}
-		]
-	}
+    "menu_background@pause.transparent_background": {
+        "size": [
+            "100% - 2px",
+            "100%c + 8px"
+        ],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "controls": [
+            {
+                "button_panel": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100% - 8px",
+                        "100%c"
+                    ],
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "controls": [
+                        {
+                            "return_to_game_button@pause.return_to_game_button": {}
+                        },
+                        {
+                            "return@pause.vertical_padding": {}
+                        },
+                        {
+                            "realms_stories_button_panel@pause.realms_stories_button_panel": {}
+                        },
+                        {
+                            "realms_stories@pause.vertical_padding": {
+                                "bindings": [
+                                    {
+                                        "binding_name": "#is_realm_level",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "settings_button@pause.settings_button": {}
+                        },
+                        {
+                            "settings@pause.vertical_padding": {}
+                        },
+                        {
+                            "buy_button@pause.buy_button": {}
+                        },
+                        {
+                            "buy@pause.vertical_padding": {
+                                "bindings": [
+                                    {
+                                        "binding_name": "#is_trial_version",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        // {
+                        //     "store_button_panel@pause.store_button_panel": {}
+                        // },
+                        // Remove marketplace button
+                        {
+                            "server@pause.vertical_padding": {
+                                "ignored": "$is_secondary_client",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#store_button_visible",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "quit_button@pause.quit_button": {}
+                        }
+                    ]
+                }
+            }
+        ]
+    }
 }
