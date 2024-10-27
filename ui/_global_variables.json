@@ -1,5 +1,4 @@
 {
-	"$screen_background_alpha": 0.01, //Makes some backgrounds invisible (inventory background, pause screen background)
 	//////// Transition times ////////
 	"$transition_time_push_size": 0.2, //Shorter screen animation times - Alien
 	"$transition_time_pop_size": 0.2, //Shorter screen animation times - Alien

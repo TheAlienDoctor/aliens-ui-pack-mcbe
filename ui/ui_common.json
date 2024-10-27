@@ -1,0 +1,14 @@
+{
+    "namespace": "common",
+    //---------------------------------------------------------------------------
+    // Common controls
+    //---------------------------------------------------------------------------
+    "screen_background": {
+        "type": "image",
+        "texture": "textures/ui/screen_background",
+        "layer": -10,
+        "ignored": "$is_holographic",
+        "$screen_background_alpha|default": 0.75,
+        "alpha": 0 //Makes some backgrounds invisible (inventory background, pause screen background)
+    }
+}
