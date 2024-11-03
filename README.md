@@ -15,6 +15,7 @@ This pack tweaks the Bedrock Edition UI in mostly minor ways to how Alien likes 
 - Removed background of sidebar scoreboards
 - No nether particles, and smaller rain particles from my better rain pack
 - Removed background of item name (the one that appears when you select it on your hotbar)
+- Move custom server list above featured server list
 - Added some fun splash screen and loading messages related to me :D
 - Honestly there might be something I missed, I didn't keep a list of features when I made this :facepalm:
 ## Download
