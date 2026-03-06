@@ -1,471 +1,346 @@
 {
-	"namespace": "crafting",
-	"player_armor_panel": {
-		"type": "panel",
-		"size": [
-			88,
-			83
-		],
-		"anchor_to": "top_left",
-		"anchor_from": "top_left",
-		"controls": [
-			{
-				"player_bg": {
-					"type": "image",
-					//"texture": "textures/ui/Black", For removing the background of the paper doll in inventory - Alien
-					"size": [
-						52,
-						70
-					],
-					"layer": 2,
-					"anchor_from": "top_left",
-					"anchor_to": "top_left",
-					"offset": [
-						26,
-						8
-					],
-					"controls": [
-						{
-							"player_renderer_panel": {
-								"type": "panel",
-								"size": [
-									30,
-									30
-								],
-								"offset": [
-									0,
-									-14
-								],
-								"controls": [
-									{
-										"player_renderer": {
-											"type": "custom",
-											"renderer": "live_player_renderer",
-											"property_bag": {
-												"#look_at_cursor": true
-											},
-											"animation_reset_name": "screen_animation_reset",
-											"anims": [
-												"@common.screen_exit_size_animation_push",
-												"@common.screen_exit_size_animation_pop",
-												"@common.screen_entrance_size_animation_push",
-												"@common.screen_entrance_size_animation_pop"
-											],
-											"layer": 8,
-											"anchor_from": "center",
-											"anchor_to": "center"
-										}
-									}
-								]
-							}
-						}
-					]
-				}
-			},
-			{
-				"player_preview_border": {
-					"type": "image",
-					"texture": "textures/ui/player_preview_border",
-					"size": [
-						54,
-						72
-					],
-					"layer": 1,
-					"anchor_from": "top_left",
-					"anchor_to": "top_left",
-					"offset": [
-						25,
-						7
-					]
-				}
-			},
-			{
-				"armor_grid": {
-					"type": "grid",
-					"layer": 1,
-					"size": [
-						18,
-						72
-					],
-					"anchor_from": "top_left",
-					"anchor_to": "top_left",
-					"offset": [
-						7,
-						7
-					],
-					"grid_dimensions": [
-						1,
-						4
-					],
-					"$item_collection_name": "armor_items",
-					"collection_name": "$item_collection_name",
-					"controls": [
-						{
-							"head_grid_item@common.container_item": {
-								"grid_position": [
-									0,
-									0
-								],
-								"$cell_overlay_ref": "crafting.armor_overlay_helmet",
-								"$button_ref": "crafting.no_coalesce_container_slot_button",
-								"$focus_id_binding_type": "none",
-								"$focus_id": "armor_item_head",
-								"$focus_override_right_binding_type": "none",
-								"$focus_override_right": "crafting_input_top_left"
-							}
-						},
-						{
-							"chest_grid_item@common.container_item": {
-								"grid_position": [
-									0,
-									1
-								],
-								"$cell_overlay_ref": "crafting.armor_overlay_chest",
-								"$button_ref": "crafting.no_coalesce_container_slot_button",
-								"$focus_id_binding_type": "none",
-								"$focus_id": "armor_item_chest",
-								"$focus_override_right_binding_type": "none",
-								"$focus_override_right": "crafting_input_top_left"
-							}
-						},
-						{
-							"legs_grid_item@common.container_item": {
-								"grid_position": [
-									0,
-									2
-								],
-								"$cell_overlay_ref": "crafting.armor_overlay_legs",
-								"$button_ref": "crafting.no_coalesce_container_slot_button",
-								"$focus_id_binding_type": "none",
-								"$focus_id": "armor_item_legs",
-								"$focus_override_right_binding_type": "none",
-								"$focus_override_right": "crafting_input_mid_left"
-							}
-						},
-						{
-							"feet_grid_item@common.container_item": {
-								"grid_position": [
-									0,
-									3
-								],
-								"$cell_overlay_ref": "crafting.armor_image_feet",
-								"$button_ref": "crafting.no_coalesce_container_slot_button",
-								"$focus_id_binding_type": "none",
-								"$focus_id": "armor_item_feet",
-								"$focus_override_right_binding_type": "none",
-								"$focus_override_right": "offhand_items0"
-							}
-						}
-					]
-				}
-			},
-			{
-				"offhand_grid": {
-					"type": "grid",
-					"layer": 1,
-					"size": [
-						18,
-						18
-					],
-					"anchor_from": "top_left",
-					"anchor_to": "top_left",
-					"offset": [
-						79,
-						61
-					],
-					"grid_dimensions": [
-						1,
-						1
-					],
-					"$item_collection_name": "offhand_items",
-					"collection_name": "$item_collection_name",
-					"controls": [
-						{
-							"offhand_grid_item@common.container_item": {
-								"grid_position": [
-									0,
-									0
-								],
-								"$cell_overlay_ref": "crafting.armor_overlay_shield",
-								"$button_ref": "crafting.no_coalesce_container_slot_button",
-								"$focus_override_left_binding_type": "none",
-								"$focus_override_left": "armor_item_feet"
-							}
-						}
-					]
-				}
-			}
-		]
-	},
-	"toolbar_panel@crafting.crafting_root_panel": {
-		"size": [
-			"100%c",
-			20
-		],
-		"controls": [
-			{
-				"toolbar_background@crafting.toolbar_background": {
-					"size": [
-						"100%cm",
-						"100% + 8px"
-					],
-					"offset": [
-						0,
-						-3
-					],
-					"anchor_from": "top_right",
-					"anchor_to": "top_right",
-					"controls": [
-						{
-							"toolbar_stack_panel": {
-								"type": "stack_panel",
-								"orientation": "horizontal",
-								"size": [
-									"default",
-									"100% - 8px"
-								],
-								"offset": [
-									0,
-									3
-								],
-								"anchor_from": "top_middle",
-								"anchor_to": "top_middle",
-								"controls": [
-									{
-										"left_trigger_anchor": {
-											"type": "panel",
-											"size": [
-												0,
-												"100%"
-											],
-											"bindings": [
-												{
-													"binding_name": "#gamepad_helper_visible",
-													"binding_name_override": "#visible"
-												}
-											],
-											"controls": [
-												{
-													"gamepad_helper_left_trigger@common.gamepad_helper_left_trigger": {
-														"offset": [
-															3,
-															-2
-														],
-														"anchor_from": "left_middle",
-														"anchor_to": "right_middle"
-													}
-												}
-											]
-										}
-									},
-									{
-										"padding_0": {
-											"type": "panel",
-											"size": [
-												8,
-												0
-											]
-										}
-									},
-									{
-										"creative_layout_toggle_panel": {
-											"type": "panel",
-											"size": [
-												"100%c",
-												"100%"
-											],
-											"bindings": [
-												{
-													"binding_type": "global",
-													"binding_name": "#creative_layout_button_visible",
-													"binding_name_override": "#visible"
-												}
-											],
-											"controls": [
-												{
-													"creative_layout_toggle@crafting.creative_layout_toggle": {
-														"$focus_override_left": "search_tab"
-													}
-												}
-											]
-										}
-									},
-									{
-										"padding_1": {
-											"type": "panel",
-											"size": [
-												2,
-												0
-											],
-											"bindings": [
-												{
-													"binding_type": "global",
-													"binding_name": "#creative_layout_button_visible",
-													"binding_name_override": "#visible"
-												}
-											]
-										}
-									},
-									{
-										"recipe_book_layout_toggle_panel_survival": {
-											"type": "panel",
-											"size": [
-												25,
-												"100%"
-											],
-											"bindings": [
-												{
-													"binding_type": "global",
-													"binding_name": "(not #is_creative_mode)",
-													"binding_name_override": "#visible"
-												}
-											],
-											"controls": [
-												{
-													"recipe_book_layout_toggle@crafting.recipe_book_layout_toggle": {
-														"$focus_override_left": "search_tab"
-													}
-												}
-											]
-										}
-									},
-									{
-										"recipe_book_layout_toggle_panel_creative": {
-											"type": "panel",
-											"size": [
-												"100%c",
-												"100%"
-											],
-											"bindings": [
-												{
-													"binding_type": "global",
-													"binding_name": "#is_creative_mode",
-													"binding_name_override": "#visible"
-												}
-											],
-											"controls": [
-												{
-													"recipe_book_layout_toggle@crafting.recipe_book_layout_toggle": {}
-												}
-											]
-										}
-									},
-									{
-										"padding_2": {
-											"type": "panel",
-											"size": [
-												1,
-												0
-											]
-										}
-									},
-									{
-										"survival_layout_toggle_panel": {
-											"type": "panel",
-											"size": [
-												"100%c",
-												"100%"
-											],
-											"controls": [
-												{
-													"survival_layout_toggle@crafting.survival_layout_toggle": {}
-												}
-											]
-										}
-									},
-									{
-										"padding_3": {
-											"type": "panel",
-											"size": [
-												4,
-												0
-											]
-										}
-									},
-									//{
-									//	"help_button_panel": {
-									//	  "type": "panel",
-									//	  "size": [
-									//		"100%c",
-									//		"100%"
-									//	  ],
-									//	  "controls": [
-									//		{
-									//		  "help_button@crafting.help_button": {}
-									//		}
-									//	  ]
-									//	}
-									//},
-									//Hide how to play button - Alien
-									{
-										"close_button_panel": {
-											"type": "panel",
-											"size": [
-												15,
-												"100%"
-											],
-											"bindings": [
-												{
-													"binding_name": "#close_button_visible",
-													"binding_name_override": "#visible"
-												}
-											],
-											"controls": [
-												{
-													"close_button@common.light_close_button": {
-														"offset": [
-															0,
-															0
-														],
-														"anchor_from": "center",
-														"anchor_to": "center"
-													}
-												}
-											]
-										}
-									},
-									{
-										"padding_4": {
-											"type": "panel",
-											"size": [
-												6,
-												0
-											]
-										}
-									},
-									{
-										"right_trigger_anchor": {
-											"type": "panel",
-											"size": [
-												0,
-												"100%"
-											],
-											"bindings": [
-												{
-													"binding_name": "#gamepad_helper_visible",
-													"binding_name_override": "#visible"
-												}
-											],
-											"controls": [
-												{
-													"gamepad_helper_right_trigger@common.gamepad_helper_right_trigger": {
-														"offset": [
-															-2,
-															-2
-														],
-														"anchor_from": "right_middle",
-														"anchor_to": "left_middle"
-													}
-												}
-											]
-										}
-									}
-								]
-							}
-						}
-					]
-				}
-			}
-		]
-	}
+"namespace": "crafting",
+
+  "player_armor_panel": {
+    "type": "panel",
+    "size": [ 88, 83 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "controls": [
+      {
+        "player_bg": {
+          "type": "image",
+          //"texture": "textures/ui/Black", For removing the background of the paper doll in inventory - Alien
+          "size": [ 52, 70 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 26, 8 ],
+          "controls": [
+            {
+              "player_renderer_panel": {
+                "type": "panel",
+                "size": [ 30, 30 ],
+                "offset": [ 0, -14 ],
+
+                "controls": [
+                  {
+                    "player_renderer": {
+                      "type": "custom",
+                      "renderer": "live_player_renderer",
+                      "property_bag": {
+                        "#look_at_cursor": true
+                      },
+                      "animation_reset_name": "screen_animation_reset",
+                      "anims": [
+                        "@common.screen_exit_size_animation_push",
+                        "@common.screen_exit_size_animation_pop",
+                        "@common.screen_entrance_size_animation_push",
+                        "@common.screen_entrance_size_animation_pop"
+                      ],
+                      "layer": 8,
+                      "anchor_from": "center",
+                      "anchor_to": "center"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "player_preview_border": {
+          "type": "image",
+          "texture": "textures/ui/player_preview_border",
+          "size": [ 54, 72 ],
+          "layer": 1,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 25, 7 ]
+        }
+      },
+      {
+        "armor_grid": {
+          "type": "grid",
+          "layer": 1,
+          "size": [ 18, 72 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 7, 7 ],
+          "grid_dimensions": [ 1, 4 ],
+          "$item_collection_name": "armor_items",
+          "collection_name": "$item_collection_name",
+          "controls": [
+            {
+              "head_grid_item@common.container_item": {
+                "grid_position": [ 0, 0 ],
+                "$cell_overlay_ref": "crafting.armor_overlay_helmet",
+                "$button_ref": "crafting.no_coalesce_container_slot_button",
+
+                "$focus_id_binding_type": "none",
+                "$focus_id": "armor_item_head",
+
+                "$focus_override_right_binding_type": "none",
+                "$focus_override_right": "crafting_input_top_left"
+              }
+            },
+            {
+              "chest_grid_item@common.container_item": {
+                "grid_position": [ 0, 1 ],
+                "$cell_overlay_ref": "crafting.armor_overlay_chest",
+                "$button_ref": "crafting.no_coalesce_container_slot_button",
+
+                "$focus_id_binding_type": "none",
+                "$focus_id": "armor_item_chest",
+
+                "$focus_override_right_binding_type": "none",
+                "$focus_override_right": "crafting_input_top_left"
+              }
+            },
+            {
+              "legs_grid_item@common.container_item": {
+                "grid_position": [ 0, 2 ],
+                "$cell_overlay_ref": "crafting.armor_overlay_legs",
+                "$button_ref": "crafting.no_coalesce_container_slot_button",
+
+                "$focus_id_binding_type": "none",
+                "$focus_id": "armor_item_legs",
+
+                "$focus_override_right_binding_type": "none",
+                "$focus_override_right": "crafting_input_mid_left"
+              }
+            },
+            {
+              "feet_grid_item@common.container_item": {
+                "grid_position": [ 0, 3 ],
+                "$cell_overlay_ref": "crafting.armor_image_feet",
+                "$button_ref": "crafting.no_coalesce_container_slot_button",
+
+                "$focus_id_binding_type": "none",
+                "$focus_id": "armor_item_feet",
+
+                "$focus_override_right_binding_type": "none",
+                "$focus_override_right": "offhand_items0"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "offhand_grid": {
+          "type": "grid",
+          "layer": 1,
+          "size": [ 18, 18 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 79, 61 ],
+          "grid_dimensions": [ 1, 1 ],
+          "$item_collection_name": "offhand_items",
+          "collection_name": "$item_collection_name",
+          "controls": [
+            {
+              "offhand_grid_item@common.container_item": {
+                "grid_position": [ 0, 0 ],
+                "$cell_overlay_ref": "crafting.armor_overlay_shield",
+                "$button_ref": "crafting.no_coalesce_container_slot_button",
+
+                "$focus_override_left_binding_type": "none",
+                "$focus_override_left": "armor_item_feet"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+    "toolbar_panel@common.crafting_root_input_panel": {
+    "size": [ "100%c", 20 ],
+
+    "controls": [
+      {
+        "toolbar_background@common.toolbar_background_image": {
+          "size": [ "100%cm", "100% + 8px" ],
+          "offset": [ 0, -3 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+
+          "controls": [
+            {
+              "toolbar_stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "ttsSectionContainer": true,
+                "size": [ "default", "100% - 8px" ],
+                "offset": [ 0, 3 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+
+                "controls": [
+                  {
+                    "left_trigger_anchor": {
+                      "type": "panel",
+                      "size": [ 0, "100%" ],
+                      "bindings": [
+                        {
+                          "binding_name": "#gamepad_helper_visible",
+                          "binding_name_override": "#visible"
+                        }
+                      ],
+                      "controls": [
+                        {
+                          "gamepad_helper_left_trigger@common.gamepad_helper_left_trigger": {
+                            "offset": [ 3, -2 ],
+                            "anchor_from": "left_middle",
+                            "anchor_to": "right_middle"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding_0": {
+                      "type": "panel",
+                      "size": [ 8, 0 ]
+                    }
+                  },
+                  {
+                    "creative_layout_toggle_panel": {
+                      "type": "panel",
+                      "size": [ "100%c", "100%" ],
+                      "bindings": [
+                        {
+                          "binding_type": "global",
+                          "binding_name": "#is_creative_layout_button_visible",
+                          "binding_name_override": "#visible"
+                        }
+                      ],
+                      "controls": [
+                        {
+                          "creative_layout_toggle@common.creative_layout_toggle": {
+                            "$focus_override_left": "search_tab"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding_1": {
+                      "type": "panel",
+                      "size": [ 2, 0 ],
+                      "bindings": [
+                        {
+                          "binding_type": "global",
+                          "binding_name": "#is_creative_layout_button_visible",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "recipe_book_layout_toggle_panel": {
+                      "type": "panel",
+                      "size": [ 25, "100%" ],
+                      "controls": [
+                        {
+                          "recipe_book_layout_toggle@common.recipe_book_layout_toggle": {
+                            "$focus_override_left": "search_tab"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding_2": {
+                      "type": "panel",
+                      "size": [ 1, 0 ]
+                    }
+                  },
+                  {
+                    "survival_layout_toggle_panel": {
+                      "type": "panel",
+                      "size": [ "100%c", "100%" ],
+                      "controls": [
+                        { "survival_layout_toggle@common.survival_layout_toggle": {} }
+                      ]
+                    }
+                  },
+                  {
+                    "padding_3": {
+                      "type": "panel",
+                      "size": [ 4, 0 ]
+                    }
+                  },
+                  //{
+                  //  "help_button_panel": {
+                  //    "type": "panel",
+                  //    "size": [ "100%c", "100%" ],
+                  //    "controls": [
+                  //      { "help_button@common.help_button": {
+                  //          "layer": 5,
+                  //          "$focus_id": "help_button",
+                  //          "$focus_override_up": "FOCUS_OVERRIDE_STOP"
+                  //        }
+                  //      }
+                  //    ]
+                  //  }
+                  //},
+                  // Remove how to play button - Alien
+                  {
+                    "close_button_panel": {
+                      "type": "panel",
+                      "size": [ 15, "100%" ],
+                      "bindings": [
+                        {
+                          "binding_name": "#close_button_visible",
+                          "binding_name_override": "#visible"
+                        }
+                      ],
+                      "controls": [
+                        {
+                          "close_button@common.light_close_button": {
+                            "offset": [ 0, 0 ],
+                            "anchor_from": "center",
+                            "anchor_to": "center"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding_4": {
+                      "type": "panel",
+                      "size": [ 6, 0 ]
+                    }
+                  },
+                  {
+                    "right_trigger_anchor": {
+                      "type": "panel",
+                      "size": [ 0, "100%" ],
+                      "bindings": [
+                        {
+                          "binding_name": "#gamepad_helper_visible",
+                          "binding_name_override": "#visible"
+                        }
+                      ],
+                      "controls": [
+                        {
+                          "gamepad_helper_right_trigger@common.gamepad_helper_right_trigger": {
+                            "offset": [ -2, -2 ],
+                            "anchor_from": "right_middle",
+                            "anchor_to": "left_middle"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
