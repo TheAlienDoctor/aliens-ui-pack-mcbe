@@ -1,84 +1,101 @@
 {
-    "menu_background@pause.transparent_background": {
-        "size": [
-            "100% - 2px",
-            "100%c + 8px"
-        ],
-        "anchor_from": "center",
-        "anchor_to": "center",
-        "controls": [
+  "namespace": "pause",
+
+  "paused_text": {
+    "type": "label",
+    "shadow": true, // Add shadow to paused text so it is easier to read - Alien
+    "color": "$f_color_format",
+    "text": "pauseScreen.gameIsPaused",
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+  "menu_background@pause.transparent_background": {
+    "size": [ "100% - 2px", "100%c + 8px" ],
+    "alpha": 0,
+    "layer": 1,
+    "anchor_from": "center",
+    "anchor_to": "center",
+	"offset": [ "13%", "0%" ],
+    "controls": [
+      {
+        "button_panel": {
+          "type": "stack_panel",
+          "size": [ "100% - 8px", "100%c" ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "controls": [
             {
-                "button_panel": {
-                    "type": "stack_panel",
-                    "size": [
-                        "100% - 8px",
-                        "100%c"
-                    ],
-                    "anchor_from": "center",
-                    "anchor_to": "center",
-                    "controls": [
-                        {
-                            "return_to_game_button@pause.return_to_game_button": {}
-                        },
-                        {
-                            "return@pause.vertical_padding": {}
-                        },
-                        {
-                            "realms_stories_button_panel@pause.realms_stories_button_panel": {}
-                        },
-                        {
-                            "realms_stories@pause.vertical_padding": {
-                                "bindings": [
-                                    {
-                                        "binding_name": "#is_realm_level",
-                                        "binding_name_override": "#visible",
-                                        "binding_type": "global"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "settings_button@pause.settings_button": {}
-                        },
-                        {
-                            "settings@pause.vertical_padding": {}
-                        },
-                        {
-                            "buy_button@pause.buy_button": {}
-                        },
-                        //{
-                        //    "buy@pause.vertical_padding": {
-                        //        "bindings": [
-                        //            {
-                        //                "binding_name": "#is_trial_version",
-                        //                "binding_name_override": "#visible",
-                        //                "binding_type": "global"
-                        //            }
-                        //        ]
-                        //    }
-                        //},
-                        // {
-                        //     "store_button_panel@pause.store_button_panel": {}
-                        // },
-                        // Remove marketplace button
-                        //{
-                        //    "server@pause.vertical_padding": {
-                        //        "ignored": "$is_secondary_client",
-                        //        "bindings": [
-                        //            {
-                        //                "binding_name": "#store_button_visible",
-                        //                "binding_name_override": "#visible",
-                        //                "binding_type": "global"
-                        //            }
-                        //        ]
-                        //    }
-                        //},
-                        {
-                            "quit_button@pause.quit_button": {}
-                        }
-                    ]
-                }
+              "title_image": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [ "100%", "20%x" ],
+                "controls": [
+                  {
+                    "image@common_art.title_image": {
+                      "size": [ "100%", "100%" ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "fill_1": {
+                "type": "panel",
+                "layer": 1,
+                "size": [ "fill", 4 ]
+              }
+            },
+            { "return_to_game_button@pause.return_to_game_button": {} },
+            { "return@pause.vertical_padding": { "size": [ 0, 3 ] } },
+            { "settings_button@pause.settings_button": { "ignored": "$pause_menu_icon_settings_layout" } },
+            { "settings@pause.vertical_padding": { "size": [ 0, 3 ], "ignored": "$pause_menu_icon_settings_layout" } },
+            { "realms_stories_button_panel@pause.realms_stories_button_panel": {} },
+            {
+              "realms_stories@pause.vertical_padding": {
+                "size": [ 0, 3 ],
+                "bindings": [
+                  {
+                    "binding_name": "#is_realm_level",
+                    "binding_name_override": "#visible",
+                    "binding_type": "global"
+                  }
+                ]
+              }
+            },
+            { "buy_button@pause.buy_button": {} },
+            {
+              "buy@pause.vertical_padding": {
+                "size": [ 0, 3 ],
+                "bindings": [
+                  {
+                    "binding_name": "#is_trial_version",
+                    "binding_name_override": "#visible",
+                    "binding_type": "global"
+                  }
+                ]
+              }
+            },
+            //{ "store_button_panel@pause.store_button_panel": {} },
+            //{
+            //  "store_button_panel_padding@pause.vertical_padding": {
+            //    "ignored": "$is_secondary_client",
+            //    "size": [0, 3]
+            //  }
+            //},
+            // Remove marketplace button - Alien
+            { "quit_button@pause.quit_button": {} },
+            { "smaller_buttons@pause.smaller_buttons_panel": {} },
+
+            {
+              "pause_panel@pause.pause_announcement_panel_green": {
+                "ignored": "(not $pause_menu_icon_settings_layout)"
+              }
             }
-        ]
-    }
+          ]
+        }
+      }
+    ]
+  }
 }
