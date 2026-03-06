@@ -1,0 +1,126 @@
+{
+    "namespace": "chat",
+    "chat_screen@common.base_screen": {
+        "close_on_player_hurt": true,
+        "$screen_content": "chat.chat_screen_content",
+        "$screen_bg_content": "chat.chat_background",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_exit",
+                "to_button_id": "button.chat_menu_cancel",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.chat_menu_cancel",
+                "mapping_type": "global"
+            }
+        ]
+    },
+    
+  "messages_text": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "text": {
+          "type": "label",
+          "color": "$chat_text_color",
+          "enable_profanity_filter": true,
+          "localize": false,
+          "size": [ "100%", "default" ],
+          "text": "#text",
+          "text_tts": "#text_tts",
+          "font_type": "$chat_font_type",
+          "font_scale_factor": "$chat_font_scale_factor",
+          "line_padding": "$chat_line_spacing",
+          "shadow": true //Add shadow so it's readable - Alien
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#chat_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "auto_complete_panel_contents_with_item": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    // We have to manually put in the size because item renderer is weird.
+    "size": [ "100%", 10 ],
+    "controls": [
+      {
+        "auto_complete_item_renderer@common.item_renderer": {
+          "size": [ 9, 9 ],
+          "offset": [ 2, 0 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "bindings": [
+            {
+              "binding_name": "#auto_complete_item",
+              "binding_type": "collection",
+              "binding_name_override": "#item_id_aux",
+              "binding_collection_name": "auto_complete"
+            }
+          ]
+        }
+      },
+      {
+        "text": {
+          "type": "label",
+          "color": "$chat_text_color",
+          "enable_profanity_filter": true,
+          "offset": [ 2, 0 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "text": "#text",
+          "localize": false,
+          "shadow": true, //Add shadow so it's readable - Alien
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_name": "#auto_complete_text",
+              "binding_name_override": "#text",
+              "binding_collection_name": "auto_complete"
+            }
+          ]
+        }
+      },
+      {
+        "autocomplete_button@common.button": {
+          "$pressed_button_name": "button.click_autocomplete",
+          "tts_inherit_siblings": true,
+          "controls": [
+            { "default": { "type": "panel" } },
+            { "hover@chat.click_autocomplete_is_focused": {} },
+            { "pressed@chat.click_autocomplete_is_focused": {} }
+          ],
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_name": "#is_autocomplete_suggestion",
+              "binding_name_override": "#visible",
+              "binding_collection_name": "auto_complete"
+            },
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "auto_complete"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "chat_background": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/ui/White",
+    "color": [ 0.0, 0.0, 0.0 ],
+    "alpha": 0.0 //Remove background - Alien
+  }
+}
